@@ -1,0 +1,60 @@
+{
+  "model": "Qwen3.8-27B 原版",
+  "enable_thinking": false,
+  "blender_version": "5.0.1",
+  "processed": 2870,
+  "labels": {
+    "pass": 1672,
+    "fail": 1172,
+    "inconclusive": 26
+  },
+  "reasons": {
+    "pass": 1672,
+    "python_syntax_error": 472,
+    "blender_error": 666,
+    "blender_timeout": 14,
+    "invalid_mesh": 31,
+    "empty_render": 3,
+    "output_limit": 11,
+    "blender_environment_error": 1
+  },
+  "by_split": {
+    "train": {
+      "pass": 1647,
+      "fail": 1155,
+      "inconclusive": 26
+    },
+    "val": {
+      "fail": 17,
+      "pass": 25
+    }
+  },
+  "pass_rate_all": 0.5825783972125436,
+  "paired": {
+    "with_cot_labels": {
+      "pass": 2833,
+      "fail": 36,
+      "inconclusive": 1
+    },
+    "with_cot_pass_rate": 0.9871080139372822,
+    "without_cot_pass_rate": 0.5825783972125436,
+    "with_minus_without_percentage_points": 40.45296167247387,
+    "matrix_rows_with_cot_columns_without_cot": {
+      "pass": {
+        "pass": 1653,
+        "fail": 1154,
+        "inconclusive": 26
+      },
+      "fail": {
+        "pass": 19,
+        "fail": 17,
+        "inconclusive": 0
+      },
+      "inconclusive": {
+        "pass": 0,
+        "fail": 1,
+        "inconclusive": 0
+      }
+    }
+  }
+}

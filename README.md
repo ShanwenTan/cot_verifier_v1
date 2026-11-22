@@ -45,6 +45,19 @@
 
 [统计 JSON](results/original-20261122/summary.json) · [逐条标签 JSONL](results/original-20261122/labels.jsonl)
 
+## 无 CoT 对照
+
+两轮按相同的 2,870 条样本 ID 配对。均使用原版 Qwen3.8-27B、原始任务、4 张参考图及相同的生成参数和 Blender 判定。无 CoT 条件去掉附加的监督 CoT 原文。
+
+| 输入 | 样本数 | pass | fail | inconclusive | 可渲染率 |
+|---|---:|---:|---:|---:|---:|
+| 原始任务 + 监督 CoT | 2,870 | 2,833 | 36 | 1 | 98.71% |
+| 原始任务 | 2,870 | 1,672 | 1,172 | 26 | 58.26% |
+
+加 CoT 的可渲染率高 **40.45 个百分点**。无 CoT 的失败包含 666 条 Blender 执行错误、472 条 Python 语法错误、31 条无效网格和 3 条空渲染。
+
+[统计与配对矩阵](results/without-cot-20261123/summary.json) · [无 CoT 逐条标签](results/without-cot-20261123/labels.jsonl)
+
 ## 在服务器运行
 
 使用当前服务器的 Linux Python 3.10+、Pillow、NVIDIA 驱动和已安装的 vLLM/Blender。隔离执行用到 unshare、mount、chroot、setpriv 和 prlimit；普通服务器账号需要支持非特权用户命名空间。
