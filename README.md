@@ -31,6 +31,20 @@
 
 标签描述的是在固定模型与评测环境下，原始任务和 CoT 能否生成可渲染代码。判定无须匹配 GT 代码或 GT 外观。一次生成失败可能来自模型生成环节，标签适合做运行性筛查。
 
+## 2026-11-22 全量实测
+
+2026-11-22 18:52:05（北京时间）完成原始 CoT 数据快照的 2,890 条评测。使用原版 Qwen3.8-27B 和 Blender 5.0.1。请求包含原始生成任务、4 张参考图和监督 CoT 原文，thinking 关闭。
+
+| 数据切分 | 总数 | pass | fail | inconclusive | 全样本可渲染率 |
+|---|---:|---:|---:|---:|---:|
+| train | 2,834 | 2,799 | 35 | 0 | 98.76% |
+| val | 56 | 54 | 1 | 1 | 96.43% |
+| 合计 | 2,890 | 2,853 | 36 | 1 | 98.72% |
+
+36 条失败包括 Blender 执行错误 34 条、Python 语法错误 2 条。另有 1 条 Blender 超时，标为 inconclusive。仅在有明确判定的 2,889 条中计算，通过率为 98.75%。
+
+[统计 JSON](results/original-20261122/summary.json) · [逐条标签 JSONL](results/original-20261122/labels.jsonl)
+
 ## 在服务器运行
 
 使用当前服务器的 Linux Python 3.10+、Pillow、NVIDIA 驱动和已安装的 vLLM/Blender。隔离执行用到 unshare、mount、chroot、setpriv 和 prlimit；普通服务器账号需要支持非特权用户命名空间。

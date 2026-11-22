@@ -1,0 +1,51 @@
+{
+  "processed": 2890,
+  "labels": {
+    "fail": 36,
+    "pass": 2853,
+    "inconclusive": 1
+  },
+  "reasons": {
+    "blender_error": 34,
+    "pass": 2853,
+    "python_syntax_error": 2,
+    "blender_timeout": 1
+  },
+  "by_split": {
+    "train": {
+      "fail": 35,
+      "pass": 2799
+    },
+    "val": {
+      "pass": 54,
+      "fail": 1,
+      "inconclusive": 1
+    }
+  },
+  "dataset": {
+    "train": {
+      "path": "/data/wangshuo/code/wuxiao-clean-cot-comparison-training/dataset/original_train.jsonl",
+      "sha256": "afe7fb3da58e1e76380c8cd8bace486baf511952f033f21bf12f4e04e7ed88cd",
+      "rows": 2834,
+      "image_counts": {
+        "4": 2834
+      },
+      "input_issues": 0
+    },
+    "val": {
+      "path": "/data/wangshuo/code/wuxiao-clean-cot-comparison-training/dataset/original_val.jsonl",
+      "sha256": "1599fc943a3e87a464926fd5255da0acf373acc4bc419c7c2c18e6a6dcc56e24",
+      "rows": 56,
+      "image_counts": {
+        "4": 56
+      },
+      "input_issues": 0
+    }
+  },
+  "pass_rate_among_decided": 0.9875389408099688,
+  "completed_utc": "2026-11-22T10:52:05.514138+00:00",
+  "model": "Qwen3.8-27B 原版",
+  "enable_thinking": false,
+  "blender_version": "5.0.1",
+  "pass_rate_all": 0.9871972318339101
+}
